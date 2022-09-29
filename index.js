@@ -99,7 +99,6 @@ window.onload = () => {
   // })
   speed_slider.addEventListener("change", (event) => {
     SIMULATION_SPEED = MAX_SIMULATION_SPEED - event.target.value;
-    console.log(SIMULATION_SPEED);
     clearInterval(interval_id);
     playSimulation();
   })
