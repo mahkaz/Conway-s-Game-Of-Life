@@ -15,11 +15,12 @@ class GameOfLife {
 
         this.cell_size = 5;
         this.dead_color = `#181818`;
-        this.alive_color = `#FF756B`;
+        this.alive_color = `#09ee42`;
         this.cells_in_column = Math.floor(canvas.width / this.cell_size);
         this.cells_in_rows = Math.floor(canvas.height / this.cell_size);
         this.active_array = [];
         this.inactive_array = [];
+        this.generation = 0
 
         this.arrayInitialization = () => {
 
@@ -34,7 +35,8 @@ class GameOfLife {
         };
 
         this.arrayRandomize = () => {
-
+            
+            
             for (let i = 0; i < this.cells_in_rows; i++) {
                 for (let j = 0; j < this.cells_in_column; j++) {
                     this.active_array[i][j] = (Math.random() > 0.5) ? 1 : 0;
@@ -58,6 +60,14 @@ class GameOfLife {
             }
 
         };
+
+        this.makeAlive = (x, y) => {
+            let col = Math.floor(x / this.cell_size);
+            let row = Math.floor(y / this.cell_size);
+            this.active_array[row][col] = 1;
+            this.fillArray();
+        }
+
 
         this.setCellValueHelper = (row, col) => {
             try {
@@ -108,6 +118,7 @@ class GameOfLife {
                 }
             }
             this.active_array = this.inactive_array
+            this.generation++
 
         };
 
