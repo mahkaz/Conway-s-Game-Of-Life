@@ -1,4 +1,8 @@
 const canvas = document.querySelector("#gamefield")
+const reset_btn = document.querySelector("#reset");
+const pause_btn = document.querySelector("#pause");
+const start_btn = document.querySelector("#start");
+const start_rand_btn = document.querySelector("#start-random");
 const ctx = canvas.getContext("2d")
 
 
@@ -21,18 +25,7 @@ function playSimulation() {
 
 window.onload = () => {
     
-    // default, start random
-    // to-do: add percentage of cells to randomise, 
-    // e.g. 80% will be either 1 or 0, 20% will be 0
-    document.querySelector("#start-random").addEventListener("click", () => {
-        isPlaying = true;
-        game.arrayRandomize();
-        game.fillArray();
-        
-        playSimulation()
-    })
-    
-    // drawing
+    // drawing cells
     canvas.addEventListener('mousedown', (e) => {
         x = e.offsetX;
         y = e.offsetY;
@@ -56,27 +49,48 @@ window.onload = () => {
         }
     });
     
+    // start simulation
+    start_btn.addEventListener("click", () => {
+        isPlaying = true;
+        playSimulation()
+    })
+    
+    // default, start random
+    // to-do: add percentage of cells to randomise, 
+    // e.g. 80% will be either 1 or 0, 20% will be 0
+    start_rand_btn.addEventListener("click", () => {
+        isPlaying = true;
+        game.arrayRandomize();
+        game.fillArray();
+        
+        playSimulation()
+    })
+
+    // pause board
+    pause_btn.addEventListener("click", () => {
+        if (isPlaying) {
+            isPlaying = false;
+        }
+    })
+    // pause_btn.addEventListener("click", () => {
+    //     reset_btn.style.backgroundColor = "#9ebe78d7"
+    // })
+
+
     // reset board
-    document.querySelector("#reset").addEventListener("click", () => {
+    reset_btn.addEventListener("click", () => {
         if (isPlaying) {
             isPlaying = false;
         }
         game.gameSetUp();
         game.fillArray();
     })
-    
-    // pause board
-    document.querySelector("#pause").addEventListener("click", () => {
-        if (isPlaying) {
-            isPlaying = false;
-        }
-    })
-    
-    // run simulation
-    document.querySelector("#start").addEventListener("click", () => {
-        isPlaying = true;
-        playSimulation()
-    })
+    // reset_btn.addEventListener("mousedown", () => {
+    //     reset_btn.style.backgroundColor = "#9ebe78d7"
+    // })
+    // reset_btn.addEventListener("mouseup", () => {
+    //     reset_btn.style.backgroundColor = "#ffffff99"
+    // })
 }
 
 
