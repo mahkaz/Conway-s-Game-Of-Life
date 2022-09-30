@@ -1,26 +1,36 @@
 *{
-    text-align: center;
-    background-color: #292929;
+  text-align: center;
+  background-color: #292929;
+  font-family: 'Roboto', sans-serif;
 }
 h1{
-    font-size: 40px;
-    color: White;
-    margin: 0px;
-    margin-top: 15px;
-    font-family: 'Roboto', sans-serif;
-    font-weight: 300;
+  font-size: 40px;
+  color: White;
+  margin: 0px;
+  margin-top: 15px;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
 }
 .buttons-div > button{
-    background-color: #ffffff99;
-    font-family: 'Roboto', sans-serif;
-    font-size: 18px;
-    padding: 10px;
-    border: none;
-    border-radius: 10px;
-    margin: 20px;
-    font-weight: 300;
-    outline: none;
+  background-color: #ffffff99;
+  font-size: 18px;
+  padding: 10px;
+  border: none;
+  border-radius: 10px;
+  margin: 20px;
+  font-weight: 300;
+  outline: none;
 }
 /* #gamefield {
-    position: absolute;
+  position: absolute;
 } */
+
+.speed-slider label {
+  display: inline-block;
+  font-size: 18px;
+  background-color: #ffffff99;
+  border-radius: 10px;
+  padding: 5px 10px;
+  margin: 20px;
+  font-weight: 300;
+}
