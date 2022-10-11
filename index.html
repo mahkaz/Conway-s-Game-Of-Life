@@ -6,25 +6,39 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="index.css">
-    <title>Document</title>
+    <title>Conway's Game of Life</title>
 </head>
 <body>
 
-    <h1>Game of Life</h1>
+    <h1>Conway's Game of Life</h1>
 
-    <div class="buttons-div">
-        <button id="start">start</button>
-        <button id="pause">pause</button>
-        <button id="reset">reset board</button>
-        <button id="start-random">start random</button>
-      <div class="speed-slider">
-        <input type="range" name="speed-slider" max="1695" min="0" />
-        <label for="speed-slider">Speed</label>
-      </div>
+    <div>
+      <table style="margin: auto">
+        <tr>
+          <td><button class="button" id="start">start</button></td>
+          <td><button class="button" id="pause">pause</button></td>
+          <td><button class="button" id="reset">reset board</button></td>
+          <td><button class="button" id="start-random">start random</button></td>
+        </tr>
+        <tr>
+          <td><input type="button" class="button" id="speed-label" style="width:180; text-align:left" value=""></td>
+        </tr>
+        <tr>
+          <td><input type="range" id="speed-slider" style="width:180" min="0" max="1000"/></td>
+        </tr>
+      </table>
     </div>
     
     <canvas id="gamefield" width="1400" height="500"></canvas>
+    <input type="button" class="button" id="gen-counter" style="margin:right" value="dasd">
+
 </body>
+<script src="utils.js"></script>
 <script src="GameOfLife.js"></script>
+<script src="draw.js"></script>
+<script src="controls.js"></script>
 <script src="index.js"></script>
+<script>
+  window.onload = program();
+</script>
 </html>

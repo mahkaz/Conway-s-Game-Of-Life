@@ -3,6 +3,7 @@
   background-color: #292929;
   font-family: 'Roboto', sans-serif;
 }
+
 h1{
   font-size: 40px;
   color: White;
@@ -12,18 +13,26 @@ h1{
   font-weight: 300;
 }
 .buttons-div > button{
-  background-color: #ffffff99;
+  background-color: #192c49e3;
   font-size: 18px;
   padding: 10px;
   border: none;
   border-radius: 10px;
   margin: 20px;
-  font-weight: 300;
+  font-weight: 500;
   outline: none;
 }
-/* #gamefield {
-  position: absolute;
-} */
+
+.button{
+  background-color: #192c49e3;
+  font-size: 18px;
+  padding: 10px;
+  border: none;
+  border-radius: 10px;
+  margin: 20px;
+  font-weight: 500;
+  outline: none;
+}
 
 .speed-slider label {
   display: inline-block;
