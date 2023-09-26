@@ -31,6 +31,8 @@ class GameOfLife {
                 }
             }
             this.inactive_array = this.active_array;
+            this.generation = 0
+            updateElementValue("gen-counter","Generation: "+ this.generation)
 
         };
 
@@ -119,6 +121,7 @@ class GameOfLife {
             }
             this.active_array = this.inactive_array
             this.generation++
+            updateElementValue("gen-counter","Generation: "+ this.generation)
 
         };
 
